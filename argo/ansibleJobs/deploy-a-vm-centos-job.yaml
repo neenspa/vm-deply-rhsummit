@@ -1,0 +1,12 @@
+---
+apiVersion: tower.ansible.com/v1alpha1
+kind: AnsibleJob
+metadata:
+  name: deploy-a-vm-centos-job
+  namespace: aap
+spec:
+  connection_secret: aapaccess
+  job_template_name: create-apache-vm
+  extra_vars: {
+"vm_name": "vmrhsummit"
+}
